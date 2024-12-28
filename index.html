@@ -128,6 +128,71 @@
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     }
 
+    .cta-button {
+      margin-top: 1.5rem;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      color: white;
+      background-color: rgb(8, 84, 72);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+
+    .cta-button:hover {
+      background-color: rgb(6, 70, 60);
+    }
+
+    /* Information Sections */
+    .info-section {
+      padding: 4rem 2rem;
+      background-color: #f9f9f9;
+    }
+
+    .info-section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: rgb(8, 84, 72);
+      margin-bottom: 2rem;
+    }
+
+    .info-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .info-card {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .info-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .info-card h3 {
+      font-size: 1.5rem;
+      color: rgb(8, 84, 72);
+      margin: 1rem 0;
+    }
+
+    .info-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: rgb(50, 50, 50);
+    }
+
     /* Panel Section */
 
     .panel-section {
@@ -181,6 +246,52 @@
       color: rgb(8, 84, 72);
     }
 
+    /* Stats Section */
+
+  .stats-section {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+
+  .stats-section h2 {
+    font-size: 2.5rem;
+    color: rgb(8, 84, 72);
+    margin-bottom: 1rem;
+  }
+
+  .stats-section p {
+    font-size: 1rem;
+    color: rgb(8 ,84 ,72);
+    margin-bottom: 2rem;
+  }
+
+  .stats-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .stat-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+  }
+
+  .stat-card h3 {
+    font-size: 2rem;
+    color: rgb(8, 84, 72);
+    margin-bottom: 1rem;
+  }
+
+  .stat-card p {
+    font-size: 1rem;
+    color: rgb(8 ,84 ,72);
+  }
     /* Footer */
 
     .footer {
@@ -209,22 +320,59 @@
         <a href="about.html">What is phishing?</a>
         <a href="forms of phishing.html">Forms of Phishing</a>
         <a href="prevention.html">Prevention</a>
+        <a href="resource-hub.html">Resource Hub</a>
       </div>
     </div>
   </header>
 
   <section class="hero-section">
     <h1>Stay Safe Online</h1>
-    <p>Find out how to combat phishing attacks and protect your online data.</p>
+    <p>Learn how to identify, prevent, and protect yourself from phishing attacks. Your safety is our priority.</p>
+    <button class="cta-button" onclick="window.location.href='resource hub.html'">Get Started</button>
   </section>
 
-  <section class="panel-section">
-    <h2>What is Phishing?</h2>
-    <div class="panel-details">
-      <img src="https://via.placeholder.com/800x400" alt="Conference Table">
-      <p>Phishing is a cyberattack where attackers trick individuals into revealing sensitive information like passwords or credit card details. This is often done through fake emails or websites that appear legitimate. These fraudulent messages may ask you to click on links or download files that can harm your device or steal your data. To protect yourself, always verify the sender's information and avoid clicking on suspicious links.</p>
+  <section class="info-section">
+    <h2>Why Awareness Matters</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <img src="https://via.placeholder.com/300" alt="Email Scams">
+        <h3>Email Scams</h3>
+        <p>Discover how to recognize fraudulent emails that target your personal data.</p>
+      </div>
+      <div class="info-card">
+        <img src="https://via.placeholder.com/300" alt="Fake Websites">
+        <h3>Fake Websites</h3>
+        <p>Learn how to spot fake websites designed to steal your information.</p>
+      </div>
+      <div class="info-card">
+        <img src="https://via.placeholder.com/300" alt="Protection Tips">
+        <h3>Protection Tips</h3>
+        <p>Get practical advice on safeguarding your digital life from phishing threats.</p>
+      </div>
     </div>
   </section>
+
+  <section class="stats-section">
+    <div class="container">
+      <h2>Phishing by the Numbers</h2>
+      <p>Phishing attacks are more prevalent than you might think. These eye-opening stats show the growing need for awareness and prevention.</p>
+      <div class="stats-cards">
+        <div class="stat-card">
+          <h3>3.4 Billion</h3>
+          <p>Phishing emails are sent every day worldwide, making them the most common cyber threat.</p>
+        </div>
+        <div class="stat-card">
+          <h3>88%</h3>
+          <p>Of organizations faced phishing attacks in 2023, highlighting its widespread impact.</p>
+        </div>
+        <div class="stat-card">
+          <h3>47%</h3>
+          <p>Of individuals do not recognize a phishing attempt until it’s too late.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
 
   <footer class="footer">
     <p>&copy; 2024 BeAwareOfPhishing. All Rights Reserved.</p>

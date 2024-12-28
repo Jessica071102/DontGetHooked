@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forms of Phishing</title>
+  <title>Security Checklist - Be Aware of Phishing</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-
   <style>
     /* General Reset */
     * {
@@ -21,7 +20,6 @@
       color: darkgreen;
       background-color: white;
       line-height: 1.6;
-      padding-top: 60px;
     }
 
     /* Header */
@@ -53,6 +51,7 @@
       font-weight: 500;
       color: rgb(8, 84, 72);
       font-size: 1.2rem;
+      text-align: center;
     }
 
     .menu-icon {
@@ -103,58 +102,64 @@
 
     /* Hero Section */
     .hero-section {
+      height: 50vh;
       background: url("Images/Blue\ Gradient\ Header\ Banner.jpg") no-repeat center center/cover;
       color: white;
-      padding: 4rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
     }
 
     .hero-section h1 {
       font-size: 3rem;
+      margin-bottom: 1rem;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     }
 
-    .hero-section p {
-      font-size: 1.2rem;
-      max-width: 1000px;
-      margin: 1rem auto;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    /* Checklist Section */
+    .checklist-section {
+      padding: 4rem 2rem;
+      background-color: #f9f9f9;
     }
 
-    /* Content Section */
-    .content-section {
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
-      padding: 2rem;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .form-block {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      background-color: #f4f4f4;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .form-block img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    .form-block h2 {
-      font-size: 2rem;
+    .checklist-section h2 {
+      text-align: center;
+      font-size: 2.5rem;
       color: rgb(8, 84, 72);
+      margin-bottom: 2rem;
     }
 
-    .form-block p {
+    .checklist {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .checklist ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .checklist li::before {
+      content: "✔";
+      color: rgb(8, 84, 72);
       font-size: 1.5rem;
-      line-height: 1.8;
+      margin-right: 1rem;
+    }
+
+    .checklist p {
+      margin-bottom: 1rem;
       color: rgb(8, 84, 72);
     }
 
@@ -183,7 +188,7 @@
       <div class="dropdown-menu" id="dropdownMenu">
         <a href="index.html">Home</a>
         <a href="about.html">What is phishing?</a>
-        <a href="forms of phishing.html">Forms of Phishing</a>
+        <a href="forms-of-phishing.html">Forms of Phishing</a>
         <a href="prevention.html">Prevention</a>
         <a href="resource-hub.html">Resource Hub</a>
       </div>
@@ -191,60 +196,25 @@
   </header>
 
   <section class="hero-section">
-    <h1>Forms of Phishing</h1>
-    <p>Explore the different ways cyber attackers target individuals and learn how to recognize them</p>
+    <h1>Security Checklist</h1>
+    <p>Follow our checklist to ensure your online safety.</p>
   </section>
 
-  <main class="content-section">
-    <div class="form-block">
-      <h2>Email Phishing</h2>
-      <img src="https://via.placeholder.com/600x400" alt="Email phishing example">
-      <p>Email phishing involves sending fraudulent emails to a broad audience that appear to come from trusted sources. These emails often include malicious links or attachments that steal your personal information.</p>
+  <section class="checklist-section">
+    <h2>Your Security Checklist</h2>
+    <div class="checklist">
+      <p>Ensure you follow these steps to protect your personal data and stay safe online:</p>
+      <ul>
+        <li>Verify email senders before opening links or attachments.</li>
+        <li>Use strong, unique passwords for each account.</li>
+        <li>Enable two-factor authentication on important accounts.</li>
+        <li>Avoid sharing personal information over email or phone unless verified.</li>
+        <li>Keep your devices and software up to date.</li>
+        <li>Use trusted security software and regularly scan for malware.</li>
+        <li>Beware of urgent requests or offers that seem too good to be true.</li>
+      </ul>
     </div>
-
-    <div class="form-block">
-      <h2>Spear Phishing</h2>
-      <img src="https://via.placeholder.com/600x400" alt="Spear phishing example">
-      <p>Spear phishing is a targeted form of phishing where attackers tailor their messages to specific individuals or organizations, increasing the likelihood of success.</p>
-    </div>
-
-    <div class="form-block">
-      <h2>Smishing</h2>
-      <img src="https://via.placeholder.com/600x400" alt="Smishing example">
-      <p>Smishing uses text messages to trick victims into revealing personal information or clicking on malicious links.</p>
-    </div>
-
-    <div class="form-block">
-      <h2>Vishing</h2>
-      <img src="https://via.placeholder.com/600x400" alt="Vishing example">
-      <p>Vishing, or voice phishing, involves attackers calling victims and pretending to be trusted entities to extract sensitive information.</p>
-    </div>
-
-    <div class="form-block">
-      <h2>Whaling</h2>
-      <img src="https://via.placeholder.com/600x400" alt="Whaling example">
-      <p>A form of phishing targeting high-profile individuals, such as CEOs or executives, to steal sensitive company data.</p>
-    </div>
-
-    <div class="form-block">
-      <h2>Clone Phishing</h2>
-      <img src="https://via.placeholder.com/600x400" alt="Clone Phishing example">
-      <p>Attackers clone a legitimate email or message and replace links or attachements with malicious versions.</p>
-    </div>
-
-    <div class="form-block">
-      <h2>Angler Phishing</h2>
-      <img src="https://via.placeholder.com/600x400" alt="Angler Phishing example">
-      <p>Phishing attacks, which occur on social media platforms, such as fake customer service accounts, to trick users into sharing sensitive data.</p>
-    </div>
-
-    <div class="form-block">
-      <h2>Pop-up Phishing</h2>
-      <img src="https://via.placeholder.com/600x400" alt="Pop-up phishing example">
-      <p>Fake pop-up windows or ads that appear on websites, prompting users to enter personal details or download malware.</p>
-    </div>
-    
-  </main>
+  </section>
 
   <footer class="footer">
     <p>&copy; 2024 BeAwareOfPhishing. All Rights Reserved.</p>

@@ -167,6 +167,95 @@
       color: rgb(50, 50, 50);
     }
 
+  /* Key Warning Signs Section */
+  .warning-signs-section {
+    padding: 3rem 2rem;
+    background-color: #f9f9f9;
+  }
+
+  .warning-signs-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: rgb(8, 84, 72);
+    margin-bottom: 3rem;
+    font-weight: 600;
+  }
+
+  .warning-signs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(1200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .warning-sign {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .warning-sign:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .warning-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .warning-icon img {
+    max-width: 80px;
+    max-height: 80px;
+  }
+
+  .warning-sign h3 {
+    font-size: 1.6rem;
+    color: rgb(8, 84, 72);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .warning-sign p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgb(50, 50, 50);
+  }
+
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .warning-signs-section h2 {
+      font-size: 2.2rem;
+    }
+
+    .warning-sign h3 {
+      font-size: 1.4rem;
+    }
+
+    .warning-sign p {
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .warning-signs-section h2 {
+      font-size: 1.8rem;
+    }
+
+    .warning-sign h3 {
+      font-size: 1.3rem;
+    }
+
+    .warning-sign p {
+      font-size: 0.85rem;
+    }
+  }
+
     /* Footer */
     .footer {
       background-color: rgb(8, 84, 72);
@@ -194,6 +283,7 @@
         <a href="about.html">What is phishing?</a>
         <a href="forms_of_phishing.html">Forms of Phishing</a>
         <a href="prevention.html">Prevention</a>
+        <a href="resource-hub.html">Resource Hub</a>
       </div>
     </div>
   </header>
@@ -226,6 +316,49 @@
         <h3>Stay Informed</h3>
         <p>Keep yourself updated on the latest phishing techniques to recognize and avoid potential threats.</p>
       </div>
+      <div class="tip">
+        <img src="https://via.placeholder.com/100" alt="Icon">
+        <h3>Use a Password Manager</h3>
+        <p>Create strong, unique passwords for each account and securely store them to avoid reused passwords.</p>
+      </div>
+      <div class="tip">
+        <img src="https://via.placeholder.com/100" alt="Icon">
+        <h3>Examine URLs Carefully</h3>
+        <p>Always inspect the URL before clicking. Phishing sites often use similar URLs with slight misspellings or alterations.</p>
+      </div>
+
+<!-- Key Warning Signs Section -->
+<section class="warning-signs-section">
+  <h2>Key Warning Signs of Phishing</h2>
+  <div class="warning-signs">
+    <div class="warning-sign">
+      <img src="https://via.placeholder.com/100" alt="Urgency Icon">
+      <h3>Urgent or Threatening Language</h3>
+      <p>Phishing emails often use urgent language, threatening actions like account suspension or legal action, to pressure you into acting quickly.</p>
+    </div>
+    <div class="warning-sign">
+      <img src="https://via.placeholder.com/100" alt="Suspicious Attachments Icon">
+      <h3>Suspicious Attachments or Links</h3>
+      <p>Phishing messages may contain attachments or links that seem out of place or lead to unfamiliar websites. Avoid clicking on them unless you're certain they are safe.</p>
+    </div>
+    <div class="warning-sign">
+      <img src="https://via.placeholder.com/100" alt="Generic Greetings Icon">
+      <h3>Generic Greetings</h3>
+      <p>Phishing attempts often use vague greetings like "Dear Customer" instead of addressing you by name. Legitimate organizations typically use personalized salutations.</p>
+    </div>
+    <div class="warning-sign">
+      <img src="https://via.placeholder.com/100" alt="Misspelled URL Icon">
+      <h3>Misspelled URLs or Domains</h3>
+      <p>Phishing websites often use URLs with slight misspellings or unusual domain names to trick you into believing they are legitimate. Always double-check the URL.</p>
+    </div>
+    <div class="warning-sign">
+      <img src="https://via.placeholder.com/100" alt="Unsolicited Requests Icon">
+      <h3>Unsolicited Requests for Personal Information</h3>
+      <p>Phishing emails may ask for sensitive information, such as passwords, credit card details, or Social Security numbers, even though legitimate companies typically don’t request this via email.</p>
+    </div>
+  </div>
+</section>
+  
     </div>
   </main>
 
