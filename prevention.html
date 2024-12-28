@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prevention - Stay Safe from Phishing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: darkgreen;
+      background-color: white;
+      line-height: 1.6;
+      padding-top: 60px;
+    }
+
+    /* Header */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      color: rgb(8, 84, 72);
+      padding: 10px 20px;
+      border-bottom: 2px solid #ccc;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-section img {
+      height: 40px;
+    }
+
+    .logo-section span {
+      font-weight: 500;
+      color: rgb(8, 84, 72);
+      font-size: 1.2rem;
+    }
+
+    .menu-icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 20px;
+      height: 20px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .menu-icon div {
+      height: 2px;
+      background-color: rgb(8, 84, 72);
+      border-radius: 3px;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px 0;
+      border-radius: 5px;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: rgb(8, 84, 72);
+      font-weight: 500;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .dropdown-menu.show {
+      display: flex;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: url("Images/Blue\ Gradient\ Header\ Banner.jpg") no-repeat center center/cover;
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      font-size: 3rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      max-width: 1000px;
+      margin: 1rem auto;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Prevention Tips Section */
+    .tips-section {
+      padding: 2rem;
+      background-color: #f9f9f9;
+    }
+
+    .tips-section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: rgb(8, 84, 72);
+      margin-bottom: 2rem;
+    }
+
+    .tips {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .tip {
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .tip img {
+      max-width: 100px;
+      margin-bottom: 1rem;
+    }
+
+    .tip h3 {
+      font-size: 1.5rem;
+      color: rgb(8, 84, 72);
+      margin-bottom: 1rem;
+    }
+
+    .tip p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: rgb(50, 50, 50);
+    }
+
+    /* Footer */
+    .footer {
+      background-color: rgb(8, 84, 72);
+      text-align: center;
+      padding: 1rem;
+      color: white;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo-section">
+        <img src="Images/1.jpg" alt="Logo">
+        <span>Be Aware of Phishing</span>
+      </div>
+      <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">What is phishing?</a>
+        <a href="forms_of_phishing.html">Forms of Phishing</a>
+        <a href="prevention.html">Prevention</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <h1>Phishing Prevention Tips</h1>
+    <p>Learn how to protect yourself from phishing attacks and secure your online presence</p>
+  </section>
+
+  <main class="tips-section">
+    <h2>Top Tips for Staying Safe</h2>
+    <div class="tips">
+      <div class="tip">
+        <img src="https://via.placeholder.com/100" alt="Icon">
+        <h3>Verify Sender</h3>
+        <p>Always check the sender's email address and domain for authenticity. Avoid clicking links from unknown sources.</p>
+      </div>
+      <div class="tip">
+        <img src="https://via.placeholder.com/100" alt="Icon">
+        <h3>Enable Multi-Factor Authentication</h3>
+        <p>Enhance your account security by enabling multi-factor authentication wherever possible.</p>
+      </div>
+      <div class="tip">
+        <img src="https://via.placeholder.com/100" alt="Icon">
+        <h3>Use Antivirus Software</h3>
+        <p>Install and update antivirus software regularly to detect and prevent malicious attacks.</p>
+      </div>
+      <div class="tip">
+        <img src="https://via.placeholder.com/100" alt="Icon">
+        <h3>Stay Informed</h3>
+        <p>Keep yourself updated on the latest phishing techniques to recognize and avoid potential threats.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 BeAwareOfPhishing. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const menu = document.getElementById('dropdownMenu');
+
+    function toggleMenu() {
+      menu.classList.toggle('show');
+    }
+
+    window.addEventListener('click', (e) => {
+      if (!e.target.closest('.menu-icon') && !e.target.closest('.dropdown-menu')) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>

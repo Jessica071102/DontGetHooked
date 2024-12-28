@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forms of Phishing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: darkgreen;
+      background-color: white;
+      line-height: 1.6;
+      padding-top: 60px;
+    }
+
+    /* Header */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      color: rgb(8, 84, 72);
+      padding: 10px 20px;
+      border-bottom: 2px solid #ccc;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-section img {
+      height: 40px;
+    }
+
+    .logo-section span {
+      font-weight: 500;
+      color: rgb(8, 84, 72);
+      font-size: 1.2rem;
+    }
+
+    .menu-icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 20px;
+      height: 20px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .menu-icon div {
+      height: 2px;
+      background-color: rgb(8, 84, 72);
+      border-radius: 3px;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px 0;
+      border-radius: 5px;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: rgb(8, 84, 72);
+      font-weight: 500;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .dropdown-menu.show {
+      display: flex;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: url("Images/Blue\ Gradient\ Header\ Banner.jpg") no-repeat center center/cover;
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      font-size: 3rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      max-width: 1000px;
+      margin: 1rem auto;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Content Section */
+    .content-section {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .form-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      background-color: #f4f4f4;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-block img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .form-block h2 {
+      font-size: 2rem;
+      color: rgb(8, 84, 72);
+    }
+
+    .form-block p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: rgb(8, 84, 72);
+    }
+
+    /* Footer */
+    .footer {
+      background-color: rgb(8, 84, 72);
+      text-align: center;
+      padding: 1rem;
+      color: white;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo-section">
+        <img src="Images/1.jpg" alt="Logo">
+        <span>Be Aware of Phishing</span>
+      </div>
+      <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">What is phishing?</a>
+        <a href="forms of phishing.html">Forms of Phishing</a>
+        <a href="prevention.html">Prevention</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <h1>Forms of Phishing</h1>
+    <p>Explore the different ways cyber attackers target individuals and learn how to recognize them</p>
+  </section>
+
+  <main class="content-section">
+    <div class="form-block">
+      <h2>Email Phishing</h2>
+      <img src="https://via.placeholder.com/600x400" alt="Email phishing example">
+      <p>Email phishing involves sending fraudulent emails that appear to come from trusted sources. These emails often include malicious links or attachments that steal your personal information.</p>
+    </div>
+
+    <div class="form-block">
+      <h2>Spear Phishing</h2>
+      <img src="https://via.placeholder.com/600x400" alt="Spear phishing example">
+      <p>Spear phishing is a targeted form of phishing where attackers tailor their messages to specific individuals or organizations, increasing the likelihood of success.</p>
+    </div>
+
+    <div class="form-block">
+      <h2>Smishing</h2>
+      <img src="https://via.placeholder.com/600x400" alt="Smishing example">
+      <p>Smishing uses text messages to trick victims into revealing personal information or clicking on malicious links.</p>
+    </div>
+
+    <div class="form-block">
+      <h2>Vishing</h2>
+      <img src="https://via.placeholder.com/600x400" alt="Vishing example">
+      <p>Vishing, or voice phishing, involves attackers calling victims and pretending to be trusted entities to extract sensitive information.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 BeAwareOfPhishing. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const menu = document.getElementById('dropdownMenu');
+
+    function toggleMenu() {
+      menu.classList.toggle('show');
+    }
+
+    window.addEventListener('click', (e) => {
+      if (!e.target.closest('.menu-icon') && !e.target.closest('.dropdown-menu')) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>

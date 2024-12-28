@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stay Safe Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /*General Reset*/
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: darkgreen;
+      background-color: white;
+      line-height: 1.6;
+    }
+
+    /*Header*/
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      color: rgb(8 ,84 ,72);
+      padding: 10px 20px;
+      border-bottom: 2px solid #ccc;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-section img {
+      height: 40px;
+    }
+
+    .logo-section span {
+      font-weight: 500;
+      color: rgb(8 ,84 ,72);
+      font-size: 1.2rem;
+    }
+
+    .menu-icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 20px;
+      height: 20px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .menu-icon div {
+      height: 2px;
+      background-color: rgb(8 ,84 ,72);
+      border-radius: 3px;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px 0;
+      border-radius: 5px;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #085448;
+      font-weight: 500;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .dropdown-menu.show {
+      display: flex;
+    }
+
+    /*Hero Section*/
+
+    .hero-section {
+      height: 100vh;
+      background: url("https://i.ibb.co/0X2WWRF/Screenshot-60.png") no-repeat center center/cover;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      font-size: 5rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      line-height: 1.5;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Panel Section */
+
+    .panel-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem;
+        background-color: #f4f4f4;
+    }
+
+    .panel-section .text {
+        flex: 1;
+        padding: 1rem;
+    }
+
+    .panel-section .image {
+        flex: 1;
+        padding: 1rem;
+    }
+
+    .panel-section img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .panel-section h2 {
+      font-size: 2.5rem;
+      color: rgb(8, 84, 72);
+      margin-bottom: 1rem;
+    }
+
+    .panel-details {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      border-radius: 10px;
+    }
+
+    .panel-details img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .panel-details p {
+      color: rgb(8, 84, 72);
+    }
+
+    /* Footer */
+
+    .footer {
+      background-color: rgb(8, 84, 72);
+      text-align: center;
+      padding: 1rem;
+      color: white;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo-section">
+        <img src="Images/1.jpg" alt="Logo">
+        <span>Be Aware of Phishing</span>
+      </div>
+      <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">What is phishing?</a>
+        <a href="forms of phishing.html">Forms of Phishing</a>
+        <a href="prevention.html">Prevention</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <h1>Stay Safe Online</h1>
+    <p>Find out how to combat phishing attacks and protect your online data.</p>
+  </section>
+
+  <section class="panel-section">
+    <h2>What is Phishing?</h2>
+    <div class="panel-details">
+      <img src="https://via.placeholder.com/800x400" alt="Conference Table">
+      <p>Phishing is a cyberattack where attackers trick individuals into revealing sensitive information like passwords or credit card details. This is often done through fake emails or websites that appear legitimate. These fraudulent messages may ask you to click on links or download files that can harm your device or steal your data. To protect yourself, always verify the sender's information and avoid clicking on suspicious links.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2024 BeAwareOfPhishing. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const menu = document.getElementById('dropdownMenu');
+
+    function toggleMenu() {
+      menu.classList.toggle('show');
+    }
+
+    window.addEventListener('click', (e) => {
+      if (!e.target.closest('.menu-icon') && !e.target.closest('.dropdown-menu')) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>
