@@ -17,7 +17,7 @@
 
     body {
       font-family: 'Montserrat', sans-serif;
-      color: darkgreen;
+      color: rgb(0,80,84);
       background-color: white;
       line-height: 1.6;
     }
@@ -28,7 +28,7 @@
       justify-content: space-between;
       align-items: center;
       background-color: white;
-      color: rgb(8, 84, 72);
+      color: rgb(0,80,84);
       padding: 10px 20px;
       border-bottom: 2px solid #ccc;
       position: fixed;
@@ -49,7 +49,7 @@
 
     .logo-section span {
       font-weight: 500;
-      color: rgb(8, 84, 72);
+      color: rgb(0,80,84);
       font-size: 1.2rem;
       text-align: center;
     }
@@ -66,7 +66,7 @@
 
     .menu-icon div {
       height: 2px;
-      background-color: rgb(8, 84, 72);
+      background-color: rgb(0,80,84);
       border-radius: 3px;
     }
 
@@ -88,7 +88,7 @@
       display: block;
       padding: 10px 20px;
       text-decoration: none;
-      color: rgb(8, 84, 72);
+      color: rgb(0,80,84);
       font-weight: 500;
     }
 
@@ -102,20 +102,35 @@
 
     /* Hero Section */
     .hero-section {
-      height: 50vh;
       background: url("Images/Blue\ Gradient\ Header\ Banner.jpg") no-repeat center center/cover;
       color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      padding: 2rem 1rem;
       text-align: center;
     }
-
+  
     .hero-section h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      font-size: 2rem;
+    }
+  
+    .hero-section p {
+      font-size: 1rem;
+    }
+  
+
+
+    /* Media Queries for Responsiveness */
+    @media (min-width: 768px) {
+      .hero-section {
+        padding: 4rem 2rem;
+      }
+  
+      .hero-section h1 {
+        font-size: 3rem;
+      }
+  
+      .hero-section p {
+        font-size: 1.2rem;
+      }
     }
 
     /* Checklist Section */
@@ -127,7 +142,7 @@
     .checklist-section h2 {
       text-align: center;
       font-size: 2.5rem;
-      color: rgb(8, 84, 72);
+      color: rgb(0,80,84);
       margin-bottom: 2rem;
     }
 
@@ -153,19 +168,19 @@
 
     .checklist li::before {
       content: "✔";
-      color: rgb(8, 84, 72);
+      color: rgb(0,80,84);
       font-size: 1.5rem;
       margin-right: 1rem;
     }
 
     .checklist p {
       margin-bottom: 1rem;
-      color: rgb(8, 84, 72);
+      color: rgb(0,80,84);
     }
 
     /* Footer */
     .footer {
-      background-color: rgb(8, 84, 72);
+      background-color: rgb(0,80,84);
       text-align: center;
       padding: 1rem;
       color: white;
