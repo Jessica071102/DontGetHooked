@@ -8,14 +8,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <style>
+<style>
     /* General Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
+  
     body {
       font-family: 'Montserrat', sans-serif;
       color: rgb(0, 84, 80);
@@ -23,14 +23,13 @@
       line-height: 1.6;
       padding-top: 60px;
     }
-
+  
     /* Header */
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       background-color: white;
-      color: rgb(0, 84, 80);
       padding: 10px 20px;
       border-bottom: 2px solid #ccc;
       position: fixed;
@@ -38,38 +37,36 @@
       top: 0;
       z-index: 1000;
     }
-
+  
     .logo-section {
       display: flex;
       align-items: center;
       gap: 10px;
     }
-
+  
     .logo-section img {
       height: 40px;
     }
-
+  
     .logo-section span {
       font-weight: 500;
-      color: rgb(0, 84, 80);
       font-size: 1.2rem;
     }
-
+  
     .menu-icon {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       width: 20px;
       height: 20px;
-      font-size: 1.5rem;
       cursor: pointer;
     }
-
+  
     .menu-icon div {
       height: 2px;
       background-color: rgb(0, 84, 80);
     }
-
+  
     .dropdown-menu {
       display: none;
       position: absolute;
@@ -77,13 +74,13 @@
       right: 20px;
       background-color: white;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
       flex-direction: column;
       gap: 10px;
       padding: 10px 0;
       border-radius: 5px;
+      z-index: 1000;
     }
-
+  
     .dropdown-menu a {
       display: block;
       padding: 10px 20px;
@@ -91,212 +88,229 @@
       color: rgb(0, 84, 80);
       font-weight: 500;
     }
-
-    .dropdown-menu a:hover {
-      background-color: #f0f0f0;
-    }
-
+  
     .dropdown-menu.show {
       display: flex;
     }
-
+  
     /* Hero Section */
     .hero-section {
-      background: url("Images/Blue\ Gradient\ Header\ Banner.jpg") no-repeat center center/cover;
+      background: url("Images/Blue Gradient Header Banner.jpg") no-repeat center center/cover;
       color: white;
-      padding: 4rem 2rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
-
+  
     .hero-section h1 {
-      font-size: 3rem;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      font-size: 2rem;
     }
-
+  
     .hero-section p {
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: 1rem auto;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+      font-size: 1rem;
     }
-
+  
     /* Content Section */
     .content-section {
+      padding: 1rem;
       display: flex;
       flex-direction: column;
-      gap: 2rem;
-      padding: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .content-block {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
       gap: 1.5rem;
     }
-
-    .content-block:nth-child(even) {
-      flex-direction: row-reverse;
+  
+    .content-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
-
+  
     .content-block img {
-      flex: 1;
-      width: 50vw;
-      height: 30vw;
+      width: 100%;
+      height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      object-fit: contain;
-      object-fit: cover;
-
     }
-
-    .content-block .text {
-      flex: 1;
-    }
-
+  
     .content-block h2 {
-      font-size: 2rem;
+      font-size: 1.5rem;
       color: rgb(8, 84, 72);
-      margin-bottom: 1rem;
     }
-
+  
     .content-block p {
       font-size: 1rem;
-      line-height: 1.8;
       color: rgb(8, 84, 72);
     }
-
+  
     /* FAQ Section */
     .faq-section {
-      padding: 2rem;
+      padding: 1rem;
       background-color: #f9f9f9;
     }
-
+  
     .faq-section h2 {
+      font-size: 2rem;
       text-align: center;
-      font-size: 2.5rem;
-      color: rgb(8, 84, 72);
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
-
-    .faq {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      margin-bottom: 1.5rem;
-    }
-
+  
     .faq-item h3 {
-      font-size: 1.2rem;
-      color: rgb(8, 84, 72);
-      margin-bottom: 0.5rem;
-    }
-
-    .faq-item p {
       font-size: 1rem;
-      color: rgb(50, 50, 50);
-      line-height: 1.6;
     }
-
+  
+    .faq-item p {
+      font-size: 0.9rem;
+    }
+  
     /* Footer */
     .footer {
       background-color: rgb(8, 84, 72);
       text-align: center;
       padding: 1rem;
       color: white;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
+    }
+  
+    /* Media Queries for Responsiveness */
+    @media (min-width: 768px) {
+      .hero-section {
+        padding: 4rem 2rem;
+      }
+  
+      .hero-section h1 {
+        font-size: 3rem;
+      }
+  
+      .hero-section p {
+        font-size: 1.2rem;
+      }
+  
+      .content-block {
+        flex-direction: row;
+        align-items: center;
+      }
+  
+      .content-block:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+  
+      .content-block img {
+        width: 50%;
+      }
+  
+      .content-block .text {
+        flex: 1;
+      }
     }
   </style>
-</head>
-<body>
-  <header>
-    <div class="navbar">
-      <div class="logo-section">
-        <img src="Images/1.jpg" alt="Logo">
-        <span>Be Aware of Phishing</span>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo-section">
+          <img src="Images/1.jpg" alt="Logo">
+          <span>Be Aware of Phishing</span>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu">
+          <a href="index.html">Home</a>
+          <a href="about.html">What is phishing?</a>
+          <a href="FormsOfPhishing.html">Forms of Phishing</a>
+          <a href="prevention.html">Prevention</a>
+          <a href="resourceHub.html">Resource Hub</a>
+        </div>
       </div>
-      <div class="menu-icon" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
+    </header>
+  
+    <section class="hero-section">
+      <h1>Understanding Phishing</h1>
+      <p>Your guide to staying safe online by identifying and combating phishing attacks</p>
+    </section>
+  
+    <main class="content-section">
+      <div class="content-block">
+        <img src= "Images/email_example_new_PP_2.png" alt="Illustration of phishing email">
+        <div class="text">
+          <h2>What is Phishing?</h2>
+          <br>
+          <p>Phishing is a deceptive method used by cybercriminals to trick individuals into providing sensitive information, such as login credentials, credit card numbers, or social security details. These attacks often come in the form of fraudulent emails or fake websites designed to look legitimate.
+
+            <br> Imagine receiving a message from what appears to be your bank, asking you to verify your account details. The email might even include logos and formatting that make it seem genuine. Clicking on the link could lead to a fake website where your data is stolen.
+            
+            <br> To spot phishing attempts, keep an eye out for:
+            
+            <li>requests for personal information.</li>
+            <li>Suspicious email addresses or links.</li>
+            <li>Generic greetings like "Dear Customer" instead of your name.</li> 
+
+            <br>Recognizing the signs of phishing is the first step to protecting yourself and your information.</p>
+        </div>
       </div>
-      <div class="dropdown-menu" id="dropdownMenu">
-        <a href="index.html">Home</a>
-        <a href="about.html">What is phishing?</a>
-        <a href="forms of phishing.html">Forms of Phishing</a>
-        <a href="prevention.html">Prevention</a>
-        <a href="resource-hub.html">Resource Hub</a>
+  
+      <div class="content-block">
+        <img src="https://via.placeholder.com/600x400" alt="Protect yourself from phishing">
+        <div class="text">
+          <h2>Goals of Phishing</h2>
+          <br>
+          <p>Phishing attacks are designed with specific objectives in mind, often targeting weaknesses in individuals or organizations. These goals can range from stealing sensitive information, such as login credentials and financial data, to spreading malware or gaining unauthorized access to systems.
+
+            <br> For example, a phishing email might aim to trick an employee into revealing their company login, giving attackers access to confidential files. Another common goal is to convince individuals to transfer funds to fraudulent accounts.
+            
+            <br> By understanding these motives, you can recognize and guard against potential threats. Awareness is your first line of defense.</p>
+        </div>
       </div>
-    </div>
-  </header>
+  
+      <div class="content-block">
+        <img src="https://via.placeholder.com/600x400" alt="Protect yourself from phishing">
+        <div class="text">
+          <h2>How to Recognize Phishing?</h2>
+          <br>
+          <p>Phishing attempts often come with telltale signs, but they can still be deceptive. 
+            <br> Common indicators include:
 
-  <section class="hero-section">
-    <h1>Understanding Phishing</h1>
-    <p>Your guide to staying safe online by identifying and combating phishing attacks</p>
-  </section>
+            <li>Requests for sensitive information, like passwords or bank details, out of the blue.</li>
+            <li>grammar, spelling mistakes, or unusual phrasing in messages.</li> 
+            <li>Links that seem suspicious or redirect you to untrusted websites.</li> 
 
-  <main class="content-section">
-    <div class="content-block">
-      <img src= "Images/email_example_new_PP_2.png" alt="Illustration of phishing email">
-      <div class="text">
-        <h2>What is Phishing?</h2>
-        <p>Phishing is a type of cyberattack where attackers attempt to trick individuals into revealing sensitive information, such as passwords, credit card details, or personal data. These attacks often involve fraudulent emails or fake websites.</p>
+            <br>Always verify the authenticity of emails or messages before responding. Double-check the sender’s email address and never click on links without inspecting them first. Our Checklist in the resource hub provides a detailed guide to the most crucial red flags to watch for.</p>
+        </div>
       </div>
-    </div>
-
-    <div class="content-block">
-      <img src="https://via.placeholder.com/600x400" alt="Protect yourself from phishing">
-      <div class="text">
-        <h2>Goals of Phishing</h2>
-        <p>Phishing attacks are crafted with specific objectives, often tailored to exploit vulnerabilities in individuals or organizations. Understanding the motives behind these attacks can help you stay vigilant.</p>
+  
+    </main>
+  
+    <section class="faq-section">
+      <h2>FAQs</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <h3>How can I avoid phishing scams?</h3>
+          <p>Be cautious of unexpected emails, verify sender details, and avoid clicking on suspicious links. Use anti-virus software and enable multi-factor authentication where possible.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What should I do if I fall victim to phishing?</h3>
+          <p>Immediately change your compromised passwords, inform your bank if financial details were shared, and report the phishing attempt to the relevant authorities.</p>
+        </div>
       </div>
-    </div>
-
-    <div class="content-block">
-      <img src="https://via.placeholder.com/600x400" alt="Protect yourself from phishing">
-      <div class="text">
-        <h2>How to Recognize Phishing?</h2>
-        <p>Phishing attempts often have subtle signs such as unexpected requests for sensitive data, poorly written messages, or suspicious links. Always verify the authenticity of communications before taking action.<br>Look at our Checklist for the most important things to look out for!</p>
-      </div>
-    </div>
-
-  </main>
-
-  <section class="faq-section">
-    <h2>FAQs</h2>
-    <div class="faq">
-      <div class="faq-item">
-        <h3>How can I avoid phishing scams?</h3>
-        <p>Be cautious of unexpected emails, verify sender details, and avoid clicking on suspicious links. Use anti-virus software and enable multi-factor authentication where possible.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What should I do if I fall victim to phishing?</h3>
-        <p>Immediately change your compromised passwords, inform your bank if financial details were shared, and report the phishing attempt to the relevant authorities.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <p>&copy; 2024 BeAwareOfPhishing. All Rights Reserved.</p>
-  </footer>
-
-    <script>
-        const menu = document.getElementById('dropdownMenu');
-    
-        function toggleMenu() {
-        menu.classList.toggle('show');
-        }
-    
-        window.addEventListener('click', (e) => {
-        if (!e.target.closest('.menu-icon') && !e.target.closest('.dropdown-menu')) {
-            menu.classList.remove('show');
-        }
-        });
-    </script>
-
-</body>
-</html>
+    </section>
+  
+    <footer class="footer">
+      <p>&copy; 2024 BeAwareOfPhishing. All Rights Reserved.</p>
+    </footer>
+  
+      <script>
+          const menu = document.getElementById('dropdownMenu');
+      
+          function toggleMenu() {
+          menu.classList.toggle('show');
+          }
+      
+          window.addEventListener('click', (e) => {
+          if (!e.target.closest('.menu-icon') && !e.target.closest('.dropdown-menu')) {
+              menu.classList.remove('show');
+          }
+          });
+      </script>
+  
+  </body>
+  </html>
