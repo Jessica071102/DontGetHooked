@@ -160,17 +160,20 @@
   z-index: 0; /* Below the overlay and text */
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .hero-section h1 {
-    font-size: 3rem; /* Adjust text size for smaller screens */
+@media (max-width: 768px) { /* Target devices with a screen width of 768px or less */
+  .hero-content {
+    border: 5px solid;
+    color: transparent; /* Adjust color, thickness, and style as needed */
+    padding: 20px; /* Add some space inside the border for better aesthetics */
+    border-radius: 20px; /* Optional: Adds rounded corners */
   }
+}
 
   .hero-section p {
     font-size: 1rem;
     padding: 0 1rem; /* Add padding for readability */
   }
-}
+
 
     .cta-button {
       margin-top: 1.5rem;
