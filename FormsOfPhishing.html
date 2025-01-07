@@ -155,6 +155,27 @@
       color: rgb(0,80, 84);
     }
 
+    /* Form Block Container */
+.form-block-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem; /* Space between blocks */
+  justify-content: center;
+}
+
+/* Form Block */
+.form-block {
+  flex: 1 1 calc(50% - 2rem); /* Two blocks per row with gap space */
+  max-width: calc(50% - 2rem);
+}
+
+@media (max-width: 768px) {
+  .form-block {
+    flex: 1 1 100%; /* Full width on smaller screens */
+    max-width: 100%;
+  }
+}
+
     /* Footer */
     .footer {
       background-color: rgb(0,80, 84);
@@ -213,54 +234,55 @@
   </section>
 
   <main class="content-section">
-    <div class="form-block">
-      <h2>Email Phishing</h2>
-      <img src="https://via.placeholder.com/600x400" alt="Email phishing example">
-      <p>Email phishing involves sending fraudulent emails to a broad audience that appear to come from trusted sources. These emails often include malicious links or attachments that steal your personal information.</p>
+    <div class="form-block-container">
+      <div class="form-block">
+        <h2>Email Phishing</h2>
+        <img src="https://via.placeholder.com/600x400" alt="Email phishing example">
+        <p>Email phishing involves sending fraudulent emails to a broad audience that appear to come from trusted sources. These emails often include malicious links or attachments that steal your personal information.</p>
+      </div>
+  
+      <div class="form-block">
+        <h2>Spear Phishing</h2>
+        <img src="https://via.placeholder.com/600x400" alt="Spear phishing example">
+        <p>Spear phishing is a targeted form of phishing where attackers tailor their messages to specific individuals or organizations, increasing the likelihood of success.</p>
+      </div>
+  
+      <div class="form-block">
+        <h2>Smishing</h2>
+        <img src="https://via.placeholder.com/600x400" alt="Smishing example">
+        <p>Smishing uses text messages to trick victims into revealing personal information or clicking on malicious links.</p>
+      </div>
+  
+      <div class="form-block">
+        <h2>Vishing</h2>
+        <img src="https://via.placeholder.com/600x400" alt="Vishing example">
+        <p>Vishing, or voice phishing, involves attackers calling victims and pretending to be trusted entities to extract sensitive information.</p>
+      </div>
+  
+      <div class="form-block">
+        <h2>Whaling</h2>
+        <img src="https://via.placeholder.com/600x400" alt="Whaling example">
+        <p>A form of phishing targeting high-profile individuals, such as CEOs or executives, to steal sensitive company data.</p>
+      </div>
+  
+      <div class="form-block">
+        <h2>Clone Phishing</h2>
+        <img src="https://via.placeholder.com/600x400" alt="Clone Phishing example">
+        <p>Attackers clone a legitimate email or message and replace links or attachments with malicious versions.</p>
+      </div>
+  
+      <div class="form-block">
+        <h2>Angler Phishing</h2>
+        <img src="https://via.placeholder.com/600x400" alt="Angler Phishing example">
+        <p>Phishing attacks, which occur on social media platforms, such as fake customer service accounts, to trick users into sharing sensitive data.</p>
+      </div>
+  
+      <div class="form-block">
+        <h2>Pop-up Phishing</h2>
+        <img src="https://via.placeholder.com/600x400" alt="Pop-up phishing example">
+        <p>Fake pop-up windows or ads that appear on websites, prompting users to enter personal details or download malware.</p>
+      </div>
     </div>
-
-    <div class="form-block">
-      <h2>Spear Phishing</h2>
-      <img src="https://via.placeholder.com/600x400" alt="Spear phishing example">
-      <p>Spear phishing is a targeted form of phishing where attackers tailor their messages to specific individuals or organizations, increasing the likelihood of success.</p>
-    </div>
-
-    <div class="form-block">
-      <h2>Smishing</h2>
-      <img src="https://via.placeholder.com/600x400" alt="Smishing example">
-      <p>Smishing uses text messages to trick victims into revealing personal information or clicking on malicious links.</p>
-    </div>
-
-    <div class="form-block">
-      <h2>Vishing</h2>
-      <img src="https://via.placeholder.com/600x400" alt="Vishing example">
-      <p>Vishing, or voice phishing, involves attackers calling victims and pretending to be trusted entities to extract sensitive information.</p>
-    </div>
-
-    <div class="form-block">
-      <h2>Whaling</h2>
-      <img src="https://via.placeholder.com/600x400" alt="Whaling example">
-      <p>A form of phishing targeting high-profile individuals, such as CEOs or executives, to steal sensitive company data.</p>
-    </div>
-
-    <div class="form-block">
-      <h2>Clone Phishing</h2>
-      <img src="https://via.placeholder.com/600x400" alt="Clone Phishing example">
-      <p>Attackers clone a legitimate email or message and replace links or attachements with malicious versions.</p>
-    </div>
-
-    <div class="form-block">
-      <h2>Angler Phishing</h2>
-      <img src="https://via.placeholder.com/600x400" alt="Angler Phishing example">
-      <p>Phishing attacks, which occur on social media platforms, such as fake customer service accounts, to trick users into sharing sensitive data.</p>
-    </div>
-
-    <div class="form-block">
-      <h2>Pop-up Phishing</h2>
-      <img src="https://via.placeholder.com/600x400" alt="Pop-up phishing example">
-      <p>Fake pop-up windows or ads that appear on websites, prompting users to enter personal details or download malware.</p>
-    </div>
-    
   </main>
 
   <footer class="footer">
