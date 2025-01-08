@@ -108,6 +108,38 @@
     .hero-section p {
       font-size: 1rem;
     }
+
+     /* Media Queries for Responsiveness */
+     @media (min-width: 768px) {
+      .hero-section {
+        padding: 4rem 2rem;
+      }
+  
+      .hero-section h1 {
+        font-size: 3rem;
+      }
+  
+      .hero-section p {
+        font-size: 1.2rem;
+      }
+
+      .content-block {
+        flex-direction: row;
+        align-items: center;
+      }
+  
+      .content-block:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+  
+      .content-block img {
+        width: 50%;
+      }
+  
+      .content-block .text {
+        flex: 1;
+      }
+    }
   
     /* Content Section */
     .content-section {
@@ -153,11 +185,11 @@
     }
   
     .faq-item h3 {
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
   
     .faq-item p {
-      font-size: 0.9rem;
+      font-size: 1.1rem;
     }
   
     /* Footer */
@@ -168,38 +200,7 @@
       color: white;
       font-size: 0.8rem;
     }
-  
-    /* Media Queries for Responsiveness */
-    @media (min-width: 768px) {
-      .hero-section {
-        padding: 4rem 2rem;
-      }
-  
-      .hero-section h1 {
-        font-size: 3rem;
-      }
-  
-      .hero-section p {
-        font-size: 1.2rem;
-      }
-  
-      .content-block {
-        flex-direction: row;
-        align-items: center;
-      }
-  
-      .content-block:nth-child(even) {
-        flex-direction: row-reverse;
-      }
-  
-      .content-block img {
-        width: 50%;
-      }
-  
-      .content-block .text {
-        flex: 1;
-      }
-    }
+
   </style>
   </head>
   <body>
@@ -288,22 +289,27 @@
           <h3>How can I avoid phishing scams?</h3>
           <p>Be cautious of unexpected emails, verify sender details, and avoid clicking on suspicious links. Use anti-virus software and enable multi-factor authentication where possible.</p>
         </div>
+        <br>
         <div class="faq-item">
           <h3>What should I do if I fall victim to phishing?</h3>
           <p>Immediately change your compromised passwords, inform your bank if financial details were shared, and report the phishing attempt to the relevant authorities.</p>
         </div>
+        <br>
         <div class="faq-item">
           <h3>Can phishing happen via text messages (SMS)?</h3>
           <p>Yes, phishing can also occur through SMS messages, often referred to as "smishing". Be wary of texts asking for personal information or containing links. Always verify the source before responding.</p>
         </div>
+        <br>
         <div class="faq-item">
           <h3>What is the best way to report phishing attempts?</h3>
           <p>Report phishing attempts to the relevant authorities such as your bank, email provider, or government cybersecurity agencies. Many organizations also have dedicated phishing hotlines or online forms for easy reporting.</p>
         </div>
+        <br>
         <div class="faq-item">
           <h3>Are phishing scams only limited to emails?</h3>
           <p>No, phishing can occur through various channels such as social media, phone calls, SMS (smishing), and even instant messaging. Always remain vigilant across all communication platforms.</p>
         </div>
+        <br>
       </div>
     </section>
   
