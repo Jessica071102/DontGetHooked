@@ -318,8 +318,11 @@
   }
 
   .carousel {
-  display: flex;
-  gap: 16px; /* Adjust gap between cards */
+    display: flex;
+  justify-content: center; /* Zentriere die Cards */
+  gap: 16px; /* Abstand zwischen den Cards */
+  overflow: hidden; /* Karten, die außerhalb des Viewports sind, werden versteckt */
+  width: calc(4 * 300px + 3 * 16px); /* Platz für vier Karten und Abstände */
   transition: transform 0.5s ease-in-out;
 }
 
