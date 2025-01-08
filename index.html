@@ -284,7 +284,7 @@
     /* Stats Section */
 
   .stats-section {
-    padding: 3rem 1rem;
+    padding: 3rem 2rem;
     background-color: #f9f9f9;
     text-align: center;
   }
@@ -302,11 +302,10 @@
   }
  /* Carousel Wrapper */
  .carousel-container {
-    position: relative;
-    align-items: center;
-    max-width: 90%;
-    overflow: hidden;
-    margin: 0 auto;
+  position: relative;
+  overflow: hidden; /* Prevent overflow of extra cards */
+  display: flex;
+  justify-content: center; /* Center the cards */
   }
 
   .carousel-wrapper {
@@ -315,42 +314,35 @@
     align-items: center;
     overflow: hidden;
     justify-content: space-between;
+    padding: 1% 0; /* Adjust padding based on your design */
   }
 
   .carousel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    will-change: transform;
-    
-    
-  }
+  display: flex;
+  gap: 16px; /* Adjust gap between cards */
+  transition: transform 0.5s ease-in-out;
+}
 
-  .carousel-button {
-    position:absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 5;
-  }
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
 
-  .carousel-button.prev {
-    left: 10px; /* Adjust placement */
-    align-self: center;
-  }
+.carousel-button.prev {
+  left: 5px;
+}
 
-  .carousel-button.next {
-    right: 10px; /* Adjust placement */
-    align-self: center;
-  }
+.carousel-button.next {
+  right: 10px;
+}
 
 
   /* Media Query for Small Screens */
@@ -370,15 +362,15 @@
   }
 
   .stat-card {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    text-align: center;
-    flex-shrink: 0;
-    margin: 0 8px;
-  }
+  flex: 0 0 calc(100% / 2); /* Dynamically adjust based on the number of visible cards */
+  max-width: 276px; /* Adjust for smaller screens */
+  box-sizing: border-box;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
   .stat-card h3 {
     font-size: 2rem;
@@ -459,10 +451,11 @@
   </section>
 
   <section class="stats-section">
+    <h2>Phishing by the Numbers</h2>
+    <p>Phishing attacks are more prevalent than you might think. These eye-opening stats show the growing need for awareness and prevention.</p>
+     
     <div class="carousel-container">
-      <h2>Phishing by the Numbers</h2>
-      <p>Phishing attacks are more prevalent than you might think. These eye-opening stats show the growing need for awareness and prevention.</p>
-       
+     
       <button class="carousel-button prev">&lt;</button>
       <div class="carousel-wrapper">
         <div class="carousel">
@@ -529,6 +522,19 @@ window.addEventListener('click', (e) => {
     menu.classList.remove('show');
   }
 });
+
+window.addEventListener('resize', adjustCardSize);
+
+function adjustCardSize() {
+  const carousel = document.querySelector('.carousel');
+  const cards = document.querySelectorAll('.stat-card');
+  const containerWidth = carousel.parentElement.offsetWidth;
+  const cardCount = Math.floor(containerWidth / 300); // Adjust based on the card width
+
+  cards.forEach((card) => {
+    card.style.flex = `0 0 calc(${100 / cardCount}% - 16px)`; // Dynamically adjust card size
+  });
+}
 
 // Carousel Variables
 const carousel = document.querySelector('.carousel');
