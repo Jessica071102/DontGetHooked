@@ -319,6 +319,8 @@
     display: flex;
     transition: transform 0.3s ease-in-out;
     gap: 2rem;
+    scroll-behavior: smooth
+    
   }
 
   .carousel-button {
@@ -454,9 +456,11 @@
     <div class="carousel-container">
       <h2>Phishing by the Numbers</h2>
       <p>Phishing attacks are more prevalent than you might think. These eye-opening stats show the growing need for awareness and prevention.</p>
+      
       <div class="carousel-wrapper">
         <button class="carousel-button prev">&#10094;</button>
         <div class="carousel">
+          <div id="stats-carousel" class="carousel">
           <div class="stat-card">
             <h3>3.4 Billion</h3>
             <p>Phishing emails are sent every day worldwide, making them the most common cyber threat.</p>
@@ -477,6 +481,19 @@
             <h3>6 Billion</h3>
             <p>Phishing attacks are estimated to occur annually, a growing concern for cybersecurity.</p>
           </div>
+          <div class="stat-card">
+            <h3>85%</h3>
+            <p>Of phishing sites last less than 24 hours, making them hard to track and shut down quickly.</p>
+          </div>
+          <div class="stat-card">
+            <h3>1 in 3</h3>
+            <p>Employees admit to clicking on phishing links due to curiosity or urgency, despite training.</p>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button id="prev-btn">Previous</button>
+          <button id="next-btn">Next</button>
+        </div>
         </div>
         <button class="carousel-button next">&#10095;</button>
       </div>
@@ -489,45 +506,104 @@
   </footer>
 
   <script>
-    const menu = document.getElementById('dropdownMenu');
+    // Dropdown Menu Functionality
+const menu = document.getElementById('dropdownMenu');
 
-    function toggleMenu() {
-      menu.classList.toggle('show');
-    }
+function toggleMenu() {
+  menu.classList.toggle('show');
+}
 
-    window.addEventListener('click', (e) => {
-      if (!e.target.closest('.menu-icon') && !e.target.closest('.dropdown-menu')) {
-        menu.classList.remove('show');
-      }
-    });
-
-   // Carousel functionality
-  const carousel = document.querySelector('.carousel');
-  const prevButton = document.querySelector('.carousel-button.prev');
-  const nextButton = document.querySelector('.carousel-button.next');
-
-  let currentIndex = 0;
-
-  function updateCarousel() {
-    const cardWidth = document.querySelector('.stat-card').offsetWidth;
-    const gap = parseInt(window.getComputedStyle(carousel).gap) || 16;
-    carousel.style.transform = `translateX(-${(cardWidth + gap) * currentIndex}px)`;
+window.addEventListener('click', (e) => {
+  if (!e.target.closest('.menu-icon') && !e.target.closest('.dropdown-menu')) {
+    menu.classList.remove('show');
   }
+});
 
-  prevButton.addEventListener('click', () => {
-    currentIndex = Math.max(currentIndex - 1, 0);
-    updateCarousel();
+// Carousel Variables
+const carousel = document.querySelector('.carousel');
+const prevButton = document.querySelector('.carousel-button.prev');
+const nextButton = document.querySelector('.carousel-button.next');
+let currentIndex = 0;
+
+// Update Carousel View
+function updateCarousel() {
+  const cardWidth = document.querySelector('.stat-card').offsetWidth;
+  const gap = 16; // Adjust based on your CSS gap
+  carousel.style.transform = `translateX(-${(cardWidth + gap) * currentIndex}px)`;
+}
+
+// Clone Carousel Cards for Seamless Looping
+function cloneCarouselCards() {
+  const cards = Array.from(document.querySelectorAll('.stat-card'));
+  const carouselInner = carousel;
+
+  cards.forEach((card) => {
+    const clone = card.cloneNode(true);
+    clone.classList.add('cloned');
+    carouselInner.appendChild(clone);
   });
 
-  nextButton.addEventListener('click', () => {
-    const totalCards = document.querySelectorAll('.stat-card').length;
-    const visibleCards = Math.floor(carousel.parentElement.offsetWidth / (document.querySelector('.stat-card').offsetWidth + 16));
-    currentIndex = Math.min(currentIndex + 1, totalCards - visibleCards);
-    updateCarousel();
-  });
+  // Adjust carousel width to accommodate all cards (original + clones)
+  const totalCards = document.querySelectorAll('.stat-card').length;
+  const cardWidth = document.querySelector('.stat-card').offsetWidth;
+  const gap = 16; // Adjust based on your CSS gap
+  carousel.style.width = `${totalCards * (cardWidth + gap)}px`;
+}
 
-  window.addEventListener('resize', updateCarousel);
-  updateCarousel(); // Initialize the carousel
+// Previous Button Functionality
+prevButton.addEventListener('click', () => {
+  const totalCards = document.querySelectorAll('.stat-card').length / 2; // Divide by 2 (original + clones)
+  const cardWidth = document.querySelector('.stat-card').offsetWidth;
+  const gap = 16;
+
+  if (currentIndex === 0) {
+    currentIndex = totalCards; // Jump to the end of the original cards
+    carousel.style.transition = 'none'; // Remove transition
+    carousel.style.transform = `translateX(-${(cardWidth + gap) * totalCards}px)`;
+    setTimeout(() => {
+      carousel.style.transition = 'transform 0.3s ease-in-out'; // Reapply transition
+      currentIndex--;
+      updateCarousel();
+    }, 20);
+  } else {
+    currentIndex--;
+    updateCarousel();
+  }
+});
+
+// Next Button Functionality
+nextButton.addEventListener('click', () => {
+  const totalCards = document.querySelectorAll('.stat-card').length / 2; // Divide by 2 (original + clones)
+  const cardWidth = document.querySelector('.stat-card').offsetWidth;
+  const gap = 16;
+
+  if (currentIndex >= totalCards) {
+    currentIndex = 0; // Jump back to the start of the original cards
+    carousel.style.transition = 'none'; // Remove transition
+    carousel.style.transform = `translateX(0px)`;
+    setTimeout(() => {
+      carousel.style.transition = 'transform 0.3s ease-in-out'; // Reapply transition
+      currentIndex++;
+      updateCarousel();
+    }, 20);
+  } else {
+    currentIndex++;
+    updateCarousel();
+  }
+});
+
+// Recalculate Carousel on Window Resize
+window.addEventListener('resize', () => {
+  updateCarousel();
+});
+
+// Initialize Carousel
+window.addEventListener('DOMContentLoaded', () => {
+  cloneCarouselCards();
+  updateCarousel();
+});
+
+
   </script>
 </body>
 </html>
