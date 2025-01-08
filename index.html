@@ -304,7 +304,7 @@
  .carousel-container {
     position: relative;
     overflow: hidden;
-    max-width: 90%;
+    max-width: 80%;
     margin: 0 auto;
   }
 
@@ -313,13 +313,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
   }
 
   .carousel {
     display: flex;
-    transition: transform 0.3s ease-in-out;
-    gap: 2rem;
-    scroll-behavior: smooth
+    transition: transform 0.2s ease-in-out;
+    will-change: transform;
     
   }
 
@@ -372,6 +372,7 @@
     width: 250px;
     text-align: center;
     flex-shrink: 0;
+    margin: 0 8px;
   }
 
   .stat-card h3 {
@@ -456,46 +457,54 @@
     <div class="carousel-container">
       <h2>Phishing by the Numbers</h2>
       <p>Phishing attacks are more prevalent than you might think. These eye-opening stats show the growing need for awareness and prevention.</p>
-      
+       
+      <button class="carousel-button prev">&lt;</button>
       <div class="carousel-wrapper">
-        <button class="carousel-button prev">&#10094;</button>
         <div class="carousel">
-          <div id="stats-carousel" class="carousel">
+          
           <div class="stat-card">
             <h3>3.4 Billion</h3>
             <p>Phishing emails are sent every day worldwide, making them the most common cyber threat.</p>
           </div>
+          
           <div class="stat-card">
             <h3>88%</h3>
             <p>Of organizations faced phishing attacks in 2023, highlighting its widespread impact.</p>
           </div>
+
           <div class="stat-card">
             <h3>47%</h3>
             <p>Of individuals do not recognize a phishing attempt until it’s too late.</p>
           </div>
+
           <div class="stat-card">
             <h3>$17,700</h3>
             <p>Is lost every minute globally due to phishing attacks.</p>
           </div>
+
           <div class="stat-card">
             <h3>6 Billion</h3>
             <p>Phishing attacks are estimated to occur annually, a growing concern for cybersecurity.</p>
           </div>
+
           <div class="stat-card">
             <h3>85%</h3>
             <p>Of phishing sites last less than 24 hours, making them hard to track and shut down quickly.</p>
           </div>
+
           <div class="stat-card">
             <h3>1 in 3</h3>
             <p>Employees admit to clicking on phishing links due to curiosity or urgency, despite training.</p>
           </div>
         </div>
+
         <div class="carousel-controls">
           <button id="prev-btn">Previous</button>
           <button id="next-btn">Next</button>
         </div>
-        </div>
-        <button class="carousel-button next">&#10095;</button>
+
+        <button class="carousel-button next">&gt;</button>
+      
       </div>
     </div>
   </section>
