@@ -318,12 +318,37 @@
   }
 
   .carousel {
-    display: flex;
-  justify-content: center; /* Zentriere die Cards */
-  gap: 16px; /* Abstand zwischen den Cards */
-  overflow: hidden; /* Karten, die außerhalb des Viewports sind, werden versteckt */
-  width: calc(4 * 300px + 3 * 16px); /* Platz für vier Karten und Abstände */
+  display: flex;
+  gap: 16px; /* Adjust gap between cards */
   transition: transform 0.5s ease-in-out;
+  justify-content: center; /* Zentriere die Cards */
+  
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .carousel {
+    flex-wrap: nowrap; /* Prevent wrapping */
+    width: calc(2 * 300px + 16px); /* Display 2 cards on medium screens */
+    overflow-x: scroll; /* Enable horizontal scrolling */
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none; /* Optional: Hide scrollbar for a cleaner look */
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    flex-wrap: nowrap; /* Prevent wrapping */
+    width: 100%; /* Allow one card to take up the full width of the screen */
+    overflow-x: scroll; /* Horizontal scrolling for smaller screens */
+  }
+
+  .stat-card {
+    flex: 0 0 90%; /* Cards take 90% of the screen width on small devices */
+    margin: 0 auto; /* Center the card */
+  }
 }
 
 .carousel-button {
@@ -348,25 +373,29 @@
 }
 
 
-  /* Media Query for Small Screens */
-  @media (max-width: 600px) {
-    .carousel-button {
-      width: 30px;
-      height: 30px;
-    }
-
-    .carousel-button.prev {
-      left: 10px;
-    }
-
-    .carousel-button.next {
-      right: 10px;
-    }
+@media (max-width: 768px) {
+  .carousel-button {
+    display: none; /* Hide buttons for horizontal scrolling */
   }
+}
+
+@media (min-width: 769px) {
+  .carousel-button {
+    display: block; /* Show buttons for larger screens */
+  }
+
+  .carousel {
+  scroll-snap-type: x mandatory; /* Snap to each card on scroll */
+}
+
+.stat-card {
+  scroll-snap-align: center; /* Align each card to the center */
+}
+}
 
   .stat-card {
   flex: 0 0 calc(100% / 2); /* Dynamically adjust based on the number of visible cards */
-  max-width: 250px; /* Adjust for smaller screens */
+  max-width: 275px; /* Adjust for smaller screens */
   box-sizing: border-box;
   padding: 15px;
   background: #fff;
@@ -385,6 +414,16 @@
     font-size: 1rem;
     color: rgb(0, 80, 84);
   }
+
+  @media (max-width: 480px) {
+  .stat-card h3 {
+    font-size: 1.2rem; /* Smaller heading on small screens */
+  }
+
+  .stat-card p {
+    font-size: 0.9rem; /* Smaller paragraph text */
+  }
+}
 
   
     /* Footer */
