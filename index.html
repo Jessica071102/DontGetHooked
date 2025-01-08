@@ -300,12 +300,66 @@
     color: rgb(0, 80, 84);
     margin-bottom: 2rem;
   }
+ /* Carousel Wrapper */
+ .carousel-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 90%;
+    margin: 0 auto;
+  }
 
-  .stats-cards {
+  .carousel-wrapper {
+    position: relative;
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
+    align-items: center;
     justify-content: center;
+  }
+
+  .carousel {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    gap: 2rem;
+  }
+
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+  }
+
+  .carousel-button.prev {
+    left: -20px; /* Adjust placement */
+  }
+
+  .carousel-button.next {
+    right: -20px; /* Adjust placement */
+  }
+
+  /* Media Query for Small Screens */
+  @media (max-width: 600px) {
+    .carousel-button {
+      width: 30px;
+      height: 30px;
+    }
+
+    .carousel-button.prev {
+      left: -10px;
+    }
+
+    .carousel-button.next {
+      right: -10px;
+    }
   }
 
   .stat-card {
@@ -315,6 +369,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 250px;
     text-align: center;
+    flex-shrink: 0;
   }
 
   .stat-card h3 {
@@ -327,6 +382,8 @@
     font-size: 1rem;
     color: rgb(0, 80, 84);
   }
+
+  
     /* Footer */
 
     .footer {
@@ -394,22 +451,34 @@
   </section>
 
   <section class="stats-section">
-    <div class="container">
+    <div class="carousel-container">
       <h2>Phishing by the Numbers</h2>
       <p>Phishing attacks are more prevalent than you might think. These eye-opening stats show the growing need for awareness and prevention.</p>
-      <div class="stats-cards">
-        <div class="stat-card">
-          <h3>3.4 Billion</h3>
-          <p>Phishing emails are sent every day worldwide, making them the most common cyber threat.</p>
+      <div class="carousel-wrapper">
+        <button class="carousel-button prev">&#10094;</button>
+        <div class="carousel">
+          <div class="stat-card">
+            <h3>3.4 Billion</h3>
+            <p>Phishing emails are sent every day worldwide, making them the most common cyber threat.</p>
+          </div>
+          <div class="stat-card">
+            <h3>88%</h3>
+            <p>Of organizations faced phishing attacks in 2023, highlighting its widespread impact.</p>
+          </div>
+          <div class="stat-card">
+            <h3>47%</h3>
+            <p>Of individuals do not recognize a phishing attempt until it’s too late.</p>
+          </div>
+          <div class="stat-card">
+            <h3>$17,700</h3>
+            <p>Is lost every minute globally due to phishing attacks.</p>
+          </div>
+          <div class="stat-card">
+            <h3>6 Billion</h3>
+            <p>Phishing attacks are estimated to occur annually, a growing concern for cybersecurity.</p>
+          </div>
         </div>
-        <div class="stat-card">
-          <h3>88%</h3>
-          <p>Of organizations faced phishing attacks in 2023, highlighting its widespread impact.</p>
-        </div>
-        <div class="stat-card">
-          <h3>47%</h3>
-          <p>Of individuals do not recognize a phishing attempt until it’s too late.</p>
-        </div>
+        <button class="carousel-button next">&#10095;</button>
       </div>
     </div>
   </section>
@@ -431,6 +500,34 @@
         menu.classList.remove('show');
       }
     });
+
+   // Carousel functionality
+  const carousel = document.querySelector('.carousel');
+  const prevButton = document.querySelector('.carousel-button.prev');
+  const nextButton = document.querySelector('.carousel-button.next');
+
+  let currentIndex = 0;
+
+  function updateCarousel() {
+    const cardWidth = document.querySelector('.stat-card').offsetWidth;
+    const gap = parseInt(window.getComputedStyle(carousel).gap) || 16;
+    carousel.style.transform = `translateX(-${(cardWidth + gap) * currentIndex}px)`;
+  }
+
+  prevButton.addEventListener('click', () => {
+    currentIndex = Math.max(currentIndex - 1, 0);
+    updateCarousel();
+  });
+
+  nextButton.addEventListener('click', () => {
+    const totalCards = document.querySelectorAll('.stat-card').length;
+    const visibleCards = Math.floor(carousel.parentElement.offsetWidth / (document.querySelector('.stat-card').offsetWidth + 16));
+    currentIndex = Math.min(currentIndex + 1, totalCards - visibleCards);
+    updateCarousel();
+  });
+
+  window.addEventListener('resize', updateCarousel);
+  updateCarousel(); // Initialize the carousel
   </script>
 </body>
 </html>
