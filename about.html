@@ -8,22 +8,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-<style>
+  <style>
     /* General Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-  
+
     body {
       font-family: 'Montserrat', sans-serif;
-      color: rgb(0, 80, 84);
+      color: #005054;
       background-color: white;
       line-height: 1.6;
       padding-top: 60px;
     }
-  
+
     /* Header */
     .navbar {
       display: flex;
@@ -37,22 +37,22 @@
       top: 0;
       z-index: 1000;
     }
-  
+
     .logo-section {
       display: flex;
       align-items: center;
       gap: 10px;
     }
-  
+
     .logo-section img {
       height: 40px;
     }
-  
+
     .logo-section span {
       font-weight: 500;
       font-size: 1.2rem;
     }
-  
+
     .menu-icon {
       display: flex;
       flex-direction: column;
@@ -61,12 +61,12 @@
       height: 20px;
       cursor: pointer;
     }
-  
+
     .menu-icon div {
       height: 2px;
       background-color: rgb(0, 80, 84);
     }
-  
+
     .dropdown-menu {
       display: none;
       position: absolute;
@@ -80,7 +80,7 @@
       border-radius: 5px;
       z-index: 1000;
     }
-  
+
     .dropdown-menu a {
       display: block;
       padding: 10px 20px;
@@ -88,113 +88,125 @@
       color: rgb(0, 80, 84);
       font-weight: 500;
     }
-  
+
     .dropdown-menu.show {
       display: flex;
     }
-  
+
     /* Hero Section */
     .hero-section {
       background: url("Images/new\ Gradient\ Banner.png") no-repeat center center/cover;
       color: white;
-      padding: 2rem 1rem;
+      padding: 4rem 1rem;
       text-align: center;
     }
-  
+
     .hero-section h1 {
       font-size: 2rem;
     }
-  
+
     .hero-section p {
       font-size: 1rem;
     }
 
-     /* Media Queries for Responsiveness */
-     @media (min-width: 768px) {
+    @media (min-width: 768px) {
       .hero-section {
-        padding: 4rem 2rem;
+        padding: 5rem 2rem;
       }
-  
+
       .hero-section h1 {
         font-size: 3rem;
       }
-  
+
       .hero-section p {
         font-size: 1.2rem;
       }
-
-      .content-block {
-        flex-direction: row;
-        align-items: center;
-      }
-  
-      .content-block:nth-child(even) {
-        flex-direction: row-reverse;
-      }
-  
-      .content-block img {
-        width: 50%;
-      }
-  
-      .content-block .text {
-        flex: 1;
-      }
-      .faq-section {
-        align-items: center;
-      }
     }
-  
+
     /* Content Section */
     .content-section {
       padding: 1rem;
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 2rem;
     }
-  
+
     .content-block {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 1rem;
     }
-  
+
     .content-block img {
       width: 100%;
+      max-width: 600px;
       height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-  
+
     .content-block h2 {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       color: rgb(0, 80, 84);
+      text-align: center;
     }
-  
+
     .content-block p {
       font-size: 1rem;
       color: rgb(0, 80, 84);
+      text-align: justify;
     }
-  
+
+    @media (min-width: 768px) {
+      .content-block {
+        flex-direction: row;
+        gap: 2rem;
+      }
+
+      .content-block img {
+        flex: 0 0 50%;
+        max-width: 400px;
+      }
+
+      .content-block .text {
+        flex: 1;
+      }
+
+      .content-block h2 {
+        text-align: left;
+      }
+
+      .content-block p {
+        text-align: left;
+      }
+
+      .content-block:nth-child(2) {
+        flex-direction: row-reverse;
+      }
+    }
+
     /* FAQ Section */
     .faq-section {
-      padding: 1rem;
+      padding: 2rem 1rem;
       background-color: #f9f9f9;
     }
-  
+
     .faq-section h2 {
       font-size: 2rem;
       text-align: center;
       margin-bottom: 1rem;
     }
-  
+
     .faq-item h3 {
       font-size: 1.2rem;
+      margin-bottom: 0.5rem;
     }
-  
+
     .faq-item p {
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
-  
+
     /* Footer */
     .footer {
       background-color: rgb(0, 80, 84);
@@ -203,136 +215,135 @@
       color: white;
       font-size: 0.8rem;
     }
-
   </style>
-  </head>
-  <body>
-    <header>
-      <div class="navbar">
-        <div class="logo-section">
-          <img src="Images/1.jpg" alt="Logo">
-          <span>Be Aware of Phishing</span>
-        </div>
-        <div class="menu-icon" onclick="toggleMenu()">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <div class="dropdown-menu" id="dropdownMenu">
-          <a href="index.html">Home</a>
-          <a href="about.html">What is phishing?</a>
-          <a href="FormsOfPhishing.html">Forms of Phishing</a>
-          <a href="prevention.html">Prevention</a>
-          <a href="resourceHub.html">Resource Hub</a>
-        </div>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo-section">
+        <img src="Images/1.jpg" alt="Logo">
+        <span>Be Aware of Phishing</span>
       </div>
-    </header>
-  
-    <section class="hero-section">
-      <h1>Understanding Phishing</h1>
-      <p>Your guide to staying safe online by identifying and combating phishing attacks</p>
-    </section>
-  
-    <main class="content-section">
-      <div class="content-block">
-        <img src= "Images/email_example_new_PP_2.png" alt="Illustration of phishing email">
-        <div class="text">
-          <h2>What is Phishing?</h2>
+      <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">What is phishing?</a>
+        <a href="FormsOfPhishing.html">Forms of Phishing</a>
+        <a href="prevention.html">Prevention</a>
+        <a href="resourceHub.html">Resources</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <h1>Understanding Phishing</h1>
+    <p>Your guide to staying safe online by identifying and combating phishing attacks</p>
+  </section>
+
+  <main class="content-section">
+    <div class="content-block">
+      <img src= "Images/what is phishing abou tpage.png" alt="Illustration of phishing email">
+      <div class="text">
+        <h2>What is Phishing?</h2>
+        <br>
+        <p>Phishing is a deceptive method used by cybercriminals to trick individuals into providing sensitive information, such as login credentials, credit card numbers, or social security details. These attacks often come in the form of fraudulent emails or fake websites designed to look legitimate.
+
+          <br> Imagine receiving a message from what appears to be your bank, asking you to verify your account details. The email might even include logos and formatting that make it seem genuine. Clicking on the link could lead to a fake website where your data is stolen.
           <br>
-          <p>Phishing is a deceptive method used by cybercriminals to trick individuals into providing sensitive information, such as login credentials, credit card numbers, or social security details. These attacks often come in the form of fraudulent emails or fake websites designed to look legitimate.
+          <br> To spot phishing attempts, keep an eye out for:
+          
+          <li>requests for personal information.</li>
+          <li>Suspicious email addresses or links.</li>
+          <li>Generic greetings like "Dear Customer" instead of your name.</li> 
 
-            <br> Imagine receiving a message from what appears to be your bank, asking you to verify your account details. The email might even include logos and formatting that make it seem genuine. Clicking on the link could lead to a fake website where your data is stolen.
-            <br>
-            <br> To spot phishing attempts, keep an eye out for:
-            
-            <li>requests for personal information.</li>
-            <li>Suspicious email addresses or links.</li>
-            <li>Generic greetings like "Dear Customer" instead of your name.</li> 
-
-            <br>Recognizing the signs of phishing is the first step to protecting yourself and your information.</p>
-        </div>
+          <br>Recognizing the signs of phishing is the first step to protecting yourself and your information.</p>
       </div>
-  
-      <div class="content-block">
-        <img src="https://via.placeholder.com/600x400" alt="Protect yourself from phishing">
-        <div class="text">
-          <h2>Goals of Phishing</h2>
+    </div>
+
+    <div class="content-block">
+      <img src="Images/Dark Green Goals of Phishing.png" alt="Protect yourself from phishing">
+      <div class="text">
+        <h2>Goals of Phishing</h2>
+        <br>
+        <p>Phishing attacks are designed with specific objectives in mind, often targeting weaknesses in individuals or organizations. These goals can range from stealing sensitive information, such as login credentials and financial data, to spreading malware or gaining unauthorized access to systems.
           <br>
-          <p>Phishing attacks are designed with specific objectives in mind, often targeting weaknesses in individuals or organizations. These goals can range from stealing sensitive information, such as login credentials and financial data, to spreading malware or gaining unauthorized access to systems.
-            <br>
-            <br> For example, a phishing email might aim to trick an employee into revealing their company login, giving attackers access to confidential files. Another common goal is to convince individuals to transfer funds to fraudulent accounts.
-            <br>
-            <br> By understanding these motives, you can recognize and guard against potential threats. Awareness is your first line of defense.</p>
-        </div>
-      </div>
-  
-      <div class="content-block">
-        <img src="https://via.placeholder.com/600x400" alt="Protect yourself from phishing">
-        <div class="text">
-          <h2>How to Recognize Phishing?</h2>
+          <br> For example, a phishing email might aim to trick an employee into revealing their company login, giving attackers access to confidential files. Another common goal is to convince individuals to transfer funds to fraudulent accounts.
           <br>
-          <p>Phishing attempts often come with telltale signs, but they can still be deceptive. 
-            <br> 
-            <br> Common indicators include:
-
-            <li>Requests for sensitive information, like passwords or bank details, out of the blue.</li>
-            <li>grammar, spelling mistakes, or unusual phrasing in messages.</li> 
-            <li>Links that seem suspicious or redirect you to untrusted websites.</li> 
-
-            <br>Always verify the authenticity of emails or messages before responding. Double-check the sender’s email address and never click on links without inspecting them first. Our Checklist in the resource hub provides a detailed guide to the most crucial red flags to watch for.</p>
-        </div>
+          <br> By understanding these motives, you can recognize and guard against potential threats. Awareness is your first line of defense.</p>
       </div>
-  
-    </main>
-  
-    <section class="faq-section">
-      <h2>FAQs</h2>
-      <div class="faq">
-        <div class="faq-item">
-          <h3>How can I avoid phishing scams?</h3>
-          <p>Be cautious of unexpected emails, verify sender details, and avoid clicking on suspicious links. Use anti-virus software and enable multi-factor authentication where possible.</p>
-        </div>
+    </div>
+
+    <div class="content-block">
+      <img src="Images/Recognize Phishing Pic about page.png" alt="Protect yourself from phishing">
+      <div class="text">
+        <h2>How to Recognize Phishing?</h2>
         <br>
-        <div class="faq-item">
-          <h3>What should I do if I fall victim to phishing?</h3>
-          <p>Immediately change your compromised passwords, inform your bank if financial details were shared, and report the phishing attempt to the relevant authorities.</p>
-        </div>
-        <br>
-        <div class="faq-item">
-          <h3>Can phishing happen via text messages (SMS)?</h3>
-          <p>Yes, phishing can also occur through SMS messages, often referred to as "smishing". Be wary of texts asking for personal information or containing links. Always verify the source before responding.</p>
-        </div>
-        <br>
-        <div class="faq-item">
-          <h3>What is the best way to report phishing attempts?</h3>
-          <p>Report phishing attempts to the relevant authorities such as your bank, email provider, or government cybersecurity agencies. Many organizations also have dedicated phishing hotlines or online forms for easy reporting.</p>
-        </div>
-        <br>
-        <div class="faq-item">
-          <h3>Are phishing scams only limited to emails?</h3>
-          <p>No, phishing can occur through various channels such as social media, phone calls, SMS (smishing), and even instant messaging. Always remain vigilant across all communication platforms.</p>
-        </div>
-        <br>
+        <p>Phishing attempts often come with telltale signs, but they can still be deceptive. 
+          <br> 
+          <br> Common indicators include:
+
+          <li>Requests for sensitive information, like passwords or bank details, out of the blue.</li>
+          <li>grammar, spelling mistakes, or unusual phrasing in messages.</li> 
+          <li>Links that seem suspicious or redirect you to untrusted websites.</li> 
+
+          <br>Always verify the authenticity of emails or messages before responding. Double-check the sender’s email address and never click on links without inspecting them first. Our Checklist in the resource hub provides a detailed guide to the most crucial red flags to watch for.</p>
       </div>
-    </section>
-  
-    <footer class="footer">
-      <p>&copy; 2024 BeAwareOfPhishing. All Rights Reserved.</p>
-    </footer>
-  
-      <script>
-          const menu = document.getElementById('dropdownMenu');
-      
-          function toggleMenu() {
-          menu.classList.toggle('show');
-          }
-      
-          window.addEventListener('click', (e) => {
-          if (!e.target.closest('.menu-icon') && !e.target.closest('.dropdown-menu')) {
-              menu.classList.remove('show');
-          }
-          });
-      </script>
-  
-  </body>
-  </html>
+    </div>
+
+  </main>
+
+
+  <section class="faq-section">
+    <h2>FAQs</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <h3>How can I avoid phishing scams?</h3>
+        <p>Be cautious of unexpected emails, verify sender details, and avoid clicking on suspicious links. Use anti-virus software and enable multi-factor authentication where possible.</p>
+      </div>
+      <br>
+      <div class="faq-item">
+        <h3>What should I do if I fall victim to phishing?</h3>
+        <p>Immediately change your compromised passwords, inform your bank if financial details were shared, and report the phishing attempt to the relevant authorities.</p>
+      </div>
+      <br>
+      <div class="faq-item">
+        <h3>Can phishing happen via text messages (SMS)?</h3>
+        <p>Yes, phishing can also occur through SMS messages, often referred to as "smishing". Be wary of texts asking for personal information or containing links. Always verify the source before responding.</p>
+      </div>
+      <br>
+      <div class="faq-item">
+        <h3>What is the best way to report phishing attempts?</h3>
+        <p>Report phishing attempts to the relevant authorities such as your bank, email provider, or government cybersecurity agencies. Many organizations also have dedicated phishing hotlines or online forms for easy reporting.</p>
+      </div>
+      <br>
+      <div class="faq-item">
+        <h3>Are phishing scams only limited to emails?</h3>
+        <p>No, phishing can occur through various channels such as social media, phone calls, SMS (smishing), and even instant messaging. Always remain vigilant across all communication platforms.</p>
+      </div>
+      <br>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2024 BeAwareOfPhishing. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const menu = document.getElementById('dropdownMenu');
+
+    function toggleMenu() {
+      menu.classList.toggle('show');
+    }
+
+    window.addEventListener('click', (e) => {
+      if (!e.target.closest('.menu-icon') && !e.target.closest('.dropdown-menu')) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>
