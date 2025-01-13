@@ -144,13 +144,13 @@
     }
 
     .content-block h2 {
-      font-size: 1.8rem;
+      font-size: 1.4rem;
       color: rgb(0, 80, 84);
       margin-bottom: 1rem;
     }
 
     .content-block h3 {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
     }
 
     .content-block p {
@@ -165,7 +165,7 @@
 
     .content-block img {
       width: 100%;
-      max-width: 600px;
+      max-width: 300px;
       height: auto;
       border-radius: 10px;
       margin: 1rem 0;
@@ -232,33 +232,56 @@
     <div class="content-block">
       <div class="text">
         <h2>Understanding the Goal</h2>
-        <p>Obtaining sensitive information such as email addresses and passwords is the objective. With access to an email inbox password, it becomes possible to reset passwords for other linked accounts. 
-            <br>
-            <br> Goal: Gain access to the email inbox login.<br>
+        <p>The main goal of conducting our own phishing attack was to demonstrate how cybercriminals exploit trust and human error to gain access to sensitive information, such as email inbox passwords. By simulating this process in a controlled and ethical environment, we aimed to highlight the serious consequences of such attacks, such as unauthorized access to linked accounts, identity theft, and data breaches, while empowering individuals to recognize and protect themselves against these threats. 
             <br>
             The first step is to establish a connection with the target by acquiring their email address, enabling communication for subsequent interactions.</p>
-            <br> <h3>Three Ways of Getting There</h3><br>
-            <li>1. Create a fake Google login page.
-            <li>2. Create a fake survey to collect email addresses of my targets.</li>  
-            <li>3. Install malware for greater flexibility in data access and spying.</li>
           </div>
-      <img src="Images/placeholder1.png" alt="Understanding Goal">
+          <img src="Images/Our phishing attack picture.webp" alt="Advertising Email">
     </div>
 
     <div class="content-block">
       <div class="text">
-        <h2>How Did I Learn It and Get Help</h2>
-        <p>By combining Perplexity AI and YouTube tutorials, we explored the methods attackers use to design and execute phishing campaigns. When faced with challenges, we copied error messages or questions directly from the terminal into Perplexity, asking for clear solutions. This iterative process, complemented by step-by-step video guides, allowed us to understand the mechanics of phishing attacks in a controlled and ethical environment, helping us to create our own attack.</p>
+        <h2>Where did we start?</h2>
+        <p> First we conducted research on identifying some key pieces of information a hacker might need to access an individual's sensitive data and came to the conclusion that one of the most accessible pieces of information a hacker can obtain is a person's email address. The most commonly used methods for collecting email addresses include “Smishing scams”, where phishers send fake messages via SMS or on social media asking for your email, and of course “fake signup forms” where attackers create fake websites or online forms which are specifically designed to collect email addresses. This led us to two questions:
+          <br>
+          <br><b>“How do hackers acquire people’s email addresses?”</b> and <b>“How could we do the same without crossing any lines?”</b> 
+        </p>
       </div>
-      <img src="Images/How did I learn it image.png" alt="Requirements">
+      <img src="Images/Our phishing attack picture.webp" alt="Where did we start?">
     </div>
 
     <div class="content-block">
       <div class="text">
-        <h2>Our fake survey</h2>
-        <p> We created a fake survey to collect email addresses by offering people an incentive for participation. This established a communication channel for sending phishing emails.
-          <h3>1. Creating a Fake Survey</h3>
-          <p>We designed a survey targeting our network, such as students, by offering an incentive like a "Pizza Friday" initiative. Participants were asked to vote and provide their email addresses.
+        <h2>Obtaining people's email addresses</h2>
+        <p>Knowing that it's quite common for students to support one another by participating in surveys  for various projects, especially when they're engaging and relatable, we decided to do just that, target our fellow students (unknowingly of course). We wanted to see how willing they are to provide us with their data without questioning our intention. 
+          <br>
+          <br>That's when we decided on creating a survey around the idea of implementing a “Pizza Friday” on campus. We knew people love pizza and we knew they would participate, but <b>would they give us their email data just for the sake of participating ? </b>
+          <br>
+          <br><b>Actually they did ! </b>
+          <br>
+          <br>We made it mandatory for students that wanted to participate to first sign up with their email address to even access the survey. 
+          
+          And that's how <b>we collected in the span of 4 days about 50 email addresses</b> with our fake “Pizza Friday". 
+        </p>
+      </div>
+      <img src="Images/Our phishing attack picture.webp" alt="Three Ways">
+    </div>
+
+    <div class="content-block">
+      <div class="text">
+        <h2>What did we do with the Emails?</h2>
+        <p> Now that we collected the email addresses the Phishing process could have started, but because we didn't want to cross that line we decided on using the data collected to advertise the conference by sending a quite mysterious mail to our participants.
+          <br> 
+        </p>
+      </div>
+      <img src="Images/Our phishing attack picture.webp" alt="Advertising Email">
+    </div>
+
+    <div class="content-block">
+      <div class="text">
+        <h2>What are the technicals behind it?</h2>
+        <p> By combining Perplexity AI and YouTube tutorials, we explored the methods attackers use to design and execute phishing campaigns. When faced with challenges, we copied error messages or questions directly from the terminal into Perplexity, asking for clear solutions. This iterative process, complemented by step-by-step video guides, allowed us to understand the mechanics of phishing attacks in a controlled and ethical environment, helping us to create our own attack.
+        
           <br>  
           <h3>2. Sending Phishing Emails</h3>
             <p>Using the collected email addresses, we sent phishing emails prompting users to log in. These emails redirected recipients to a credential-harvesting website.</p>
@@ -281,16 +304,24 @@
       <img src="Images/Our phishing attack picture.webp" alt="Three Ways">
     </div>
 
-
-    <div class="content-block">
-      <div class="text">
-        <h2>How Did I Learn It and Get Help</h2>
-        <p>Use Perplexity for questions about setup and troubleshooting. (Placeholder for image here.)</p>
-      </div>
-      <img src="Images/placeholder4.png" alt="Learn and Help">
-    </div>
   </main>
 
   <footer class="footer">
     <p>&copy; 2024 BeAwareOfPhishing. All Rights Reserved.</p>
   </footer>
+
+  <script>
+    const menu = document.getElementById('dropdownMenu');
+
+    function toggleMenu() {
+      menu.classList.toggle('show');
+    }
+
+    window.addEventListener('click', (e) => {
+      if (!e.target.closest('.menu-icon') && !e.target.closest('.dropdown-menu')) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
+  </body>
+  </html>
