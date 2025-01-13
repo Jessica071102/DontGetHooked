@@ -105,6 +105,10 @@
       font-size: 2rem;
     }
 
+    .hero-section h2 {
+      font-size: 1.5rem;
+    }
+
     .hero-section p {
       font-size: 1rem;
     }
@@ -113,6 +117,7 @@
       .hero-section {
         padding: 5rem 2rem;
       }
+    
 
       .hero-section h1 {
         font-size: 3rem;
@@ -144,11 +149,19 @@
       margin-bottom: 1rem;
     }
 
+    .content-block h3 {
+      font-size: 1.4rem;
+    }
+
     .content-block p {
       font-size: 1rem;
       color: rgb(0, 80, 84);
       margin-bottom: 1rem;
     }
+
+    ul {
+    margin-left: 20px; /* Adjust this value to move bullets further */
+  }
 
     .content-block img {
       width: 100%;
@@ -220,33 +233,54 @@
       <div class="text">
         <h2>Understanding the Goal</h2>
         <p>Obtaining sensitive information such as email addresses and passwords is the objective. With access to an email inbox password, it becomes possible to reset passwords for other linked accounts. 
-            
+            <br>
             <br> Goal: Gain access to the email inbox login.<br>
-
+            <br>
             The first step is to establish a connection with the target by acquiring their email address, enabling communication for subsequent interactions.</p>
-      </div>
+            <br> <h3>Three Ways of Getting There</h3><br>
+            <li>1. Create a fake Google login page.
+            <li>2. Create a fake survey to collect email addresses of my targets.</li>  
+            <li>3. Install malware for greater flexibility in data access and spying.</li>
+          </div>
       <img src="Images/placeholder1.png" alt="Understanding Goal">
     </div>
 
     <div class="content-block">
       <div class="text">
-        <h2>Three Ways of Getting There</h2>
-        <p>
-          1. Create a fake Google login page.<br>
-          2. Create a fake survey to collect email addresses of my targets.<br>
-          3. Install malware for greater flexibility in data access and spying.
-        </p>
+        <h2>How Did I Learn It and Get Help</h2>
+        <p>By combining Perplexity AI and YouTube tutorials, we explored the methods attackers use to design and execute phishing campaigns. When faced with challenges, we copied error messages or questions directly from the terminal into Perplexity, asking for clear solutions. This iterative process, complemented by step-by-step video guides, allowed us to understand the mechanics of phishing attacks in a controlled and ethical environment, helping us to create our own attack.</p>
       </div>
-      <img src="Images/placeholder2.png" alt="Three Ways">
+      <img src="Images/How did I learn it image.png" alt="Requirements">
     </div>
 
     <div class="content-block">
       <div class="text">
-        <h2>Requirements</h2>
-        <p>It has to be easy so that a student with no prior experience can do it.</p>
+        <h2>Our fake survey</h2>
+        <p> We created a fake survey to collect email addresses by offering people an incentive for participation. This established a communication channel for sending phishing emails.
+          <h3>1. Creating a Fake Survey</h3>
+          <p>We designed a survey targeting our network, such as students, by offering an incentive like a "Pizza Friday" initiative. Participants were asked to vote and provide their email addresses.
+          <br>  
+          <h3>2. Sending Phishing Emails</h3>
+            <p>Using the collected email addresses, we sent phishing emails prompting users to log in. These emails redirected recipients to a credential-harvesting website.</p>
+          
+          <h3>3. Setting Up the Credential-Harvesting Website</h3>
+          <p>To set up our website we used tools like BlackEye or Zphisher.</p>
+          <ul style="list-style-type: disc;">
+
+          <li>Basic setup involved:</li>
+              <ul>
+                <li>Using the collected email addresses, we sent phishing emails prompting users to log in. These emails redirected recipients to a credential-harvesting website.</li>
+              <li>Opening the terminal and installing necessary tools via GitHub (e.g., sudo git).</li>
+              <li>the phishing tool and addressing issues like the lack of HTTPS secure tunnels by installing solutions like ngrok or using website forwarding.</li>
+              <li>We referenced detailed guides, including YouTube tutorials, and used tools like Perplexity AI to troubleshoot any problems.</li>
+            </ul>
+            </ul>
+
+        </p>
       </div>
-      <img src="Images/placeholder3.png" alt="Requirements">
+      <img src="Images/Our phishing attack picture.webp" alt="Three Ways">
     </div>
+
 
     <div class="content-block">
       <div class="text">
